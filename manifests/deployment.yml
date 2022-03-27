@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: roostergrspringpetclinic 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roostergrspringpetclinic
+  template:
+    metadata:
+      labels:
+        app: roostergrspringpetclinic 
+    spec:
+      containers:
+        - name: roostergrspringpetclinic 
+          image: roostergr.azurecr.io/roostergrspringpetclinic
+          ports:
+          - containerPort: 80
